@@ -1,10 +1,10 @@
-vCard - Personal Portfolio
+vCard - 个人名片/个人作品集
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
-Web developer
+alt = LCC
+LCC
+网页开发人员
 
 Show Contacts
 

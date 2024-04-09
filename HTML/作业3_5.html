@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var num=prompt("请输入：");
+			console.log(num);
+			
+			/* 三角形 */
+			// 定义等腰三角形的高度
+			var height = num;
+			// 循环逐行输出等腰三角形
+			for (var i = 1; i <= height; i++) {
+				// 输出空格，使每行的星号居中对齐
+				for (var j = 1; j <= height - i; j++) {
+					document.write("&nbsp;");
+				}
+				// 输出星号
+				for (var k = 1; k <= 2 * i - 1; k++) {
+					if (k % 2 == 0) {
+						document.write("&nbsp;")
+					} else {
+						document.write("*");
+					}
+				}
+				// 换行
+				document.write("<br>");
+			}
+			
+			
+			
+			/* 平行四边形 */
+			for (var i = 1; i <= num; i++) {
+				for (var j = 1; j <= num - i; j++) {
+					document.write("&nbsp;&nbsp;");
+				}
+				for (var k = 1; k <= num; k++) {
+					document.write("&nbsp;");
+					document.write("*");
+				}
+				document.write("<br>");
+			}
+			
+			
+			/* 菱形 */
+			 for (let i = 1; i <= Math.ceil(num / 2); i++) {
+			        // 打印空格
+			        for (let k = Math.ceil(num / 2) - i; k > 0; k--) {
+			            document.write("&nbsp;");
+			        }
+			        // 打印 *
+			        for (let j = 1; j <= 2 * i - 1; j++) {
+			            document.write("*");
+			        }
+			        document.write("<br>");
+			    }
+			
+			    // 下半部分
+			    for (let i = Math.floor(num / 2); i >= 1; i--) {
+			        // 打印空格
+			        for (let k = Math.ceil(num / 2) - i; k > 0; k--) {
+			            document.write("&nbsp;");
+			        }
+			        // 打印 *
+			        for (let j = 1; j <= 2 * i - 1; j++) {
+			            document.write("*");
+			        }
+			        document.write("<br>");
+			    }
+			
+		</script>
+	</body>
+</html>

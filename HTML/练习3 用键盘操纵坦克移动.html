@@ -5,12 +5,12 @@
 		<title>让坦克开起来</title>
 		<style type="text/css">
 			input{font-size:26px;margin-top: 20px;}
-			body{background-image: url(images/grassland.png);}
+			body{background-image: url(../assets/images/img/grassland.png);}
 			#mytank{position: absolute;left:10px;top:100px}
 		</style>
 	</head>
 	<body>		
-		<img id="mytank" src="images/right.png"/>
+		<img id="mytank" src="../assets/images/img/right.png"/>
 		<script>
 			// 获取元素
 			const tank = document.querySelector('#mytank');
@@ -23,28 +23,28 @@
 				switch(event.key) {
 					case 'w':
 						if (tankTop - speed >= 0) {
-							tank.src="images/up.png"
+							tank.src="../assets/images/img/up.png"
 							tankTop -= speed;
 							tank.style.top = tankTop + 'px';
 						}
 						break;
 					case 'a':
 						if (tankLeft - speed >= 0) {
-							tank.src="images/left.png"
+							tank.src="../assets/images/img/left.png"
 							tankLeft -= speed;
 							tank.style.left = tankLeft + 'px';
 						}
 						break;
 					case 's':
 						if (tankTop + tank.clientHeight + speed <= window.innerHeight) {
-							tank.src="images/down.png"
+							tank.src="../assets/images/img/down.png"
 							tankTop += speed;
 							tank.style.top = tankTop + 'px';
 						}
 						break;
 					case 'd':
 						if (tankLeft + tank.clientWidth + speed <= window.innerWidth) {
-							tank.src="images/right.png"
+							tank.src="../assets/images/img/right.png"
 							tankLeft += speed;
 							tank.style.left = tankLeft + 'px';
 						}

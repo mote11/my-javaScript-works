@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制角色移动</title>
+    <!-- 219971122吕朝城 -->
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+        #game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #game-character {
+            position: absolute;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script>
+        $(document).ready(function() {
+            var character = $('#game-character');
+    var treasure = $('#treasure');
+    var gameContainer = $('#game-container');
+    var isTransformed = false; // 跟踪变身状态
+    var isMovingRight = true; // 跟踪移动方向
+
+        // 鼠标点击移动角色
+        gameContainer.click(function(e) {
+            var newLeft = e.pageX - gameContainer.offset().left - character.width() / 2;
+            var newTop = e.pageY - gameContainer.offset().top - character.height() / 2;
+
+            // 根据点击位置判断移动方向
+            isMovingRight = newLeft > character.position().left;    
+
+        // 根据变身状态和移动方向设置对应的图片
+        var src = isTransformed
+            ? (isMovingRight ? 'img/playerbig_right.gif' : 'img/playerbig_left.gif')
+            : (isMovingRight ? 'img/player_right.gif' : 'img/player_left.gif');
+            // 设置图片
+        character.attr('src', src);
+        character.stop().animate({
+        left: newLeft + 'px',
+        top: newTop + 'px'
+        }, 3000, function() {
+        });
+    });
+
+            // 双击事件处理变身
+            character.dblclick(function() {
+            var currentSrc = character.attr('src');
+            var newSrc = isTransformed ? 'img/player_right.gif' : 'img/player2.gif';
+            character.attr('src', newSrc).css('left', 0).css('top', 0); // 重置位置
+            isTransformed = !isTransformed;
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <img id="game-character" src="img/player_right.gif" />
+    </div>
+</body>
+</html>

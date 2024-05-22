@@ -5,7 +5,7 @@
     <title>注册页面</title>
     <style>
         body {
-            background: url("./img/背景.png");
+            background: url("../assets/images/img/背景.png");
             background-size: cover;
         }
         
@@ -118,7 +118,7 @@
             var flag = reg_username.test(username);
             var s_username = document.getElementById("s_username");
             if(flag){
-                s_username.innerHTML = "<img width='35' height='25' src='img/对.png'/>";
+                s_username.innerHTML = "<img width='35' height='25' src='../assets/images/img/对.png'/>";
             }else{
                 s_username.innerHTML = "用户名格式有误";
             }
@@ -131,7 +131,7 @@
             var flag = reg_password.test(password);
             var s_password = document.getElementById("s_password");
             if(flag){
-                s_password.innerHTML = "<img width='35' height='25' src='img/对.png'/>";
+                s_password.innerHTML = "<img width='35' height='25' src='../assets/images/img/对.png'/>";
             }else{
                 s_password.innerHTML = "密码格式有误";
             }
@@ -146,7 +146,7 @@
             var s_email = document.getElementById("s_email");
     
         if(flag) {
-            s_email.innerHTML = "<img width='35' height='25' src='img/对.png'/>";
+            s_email.innerHTML = "<img width='35' height='25' src='../assets/images/img/对.png'/>";
         } else {
         s_email.innerHTML = "邮箱格式有误";
         }
@@ -162,7 +162,7 @@
             var s_mobile = document.getElementById("s_tel");
     
             if(flag) {
-                s_mobile.innerHTML = "<img width='35' height='25' src='img/对.png'/>";
+                s_mobile.innerHTML = "<img width='35' height='25' src='../assets/images/img/对.png'/>";
             } else {
             s_mobile.innerHTML = "手机号码格式有误";
         }
